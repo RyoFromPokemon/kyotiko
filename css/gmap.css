@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+#wrapper{
+	max-width: 100%;
+	margin: 0 auto;
+	margin-top: 100px;
+  	overflow:hidden; 
+  	z-index: 1;
+  	position: relative;
+}
+#wrapper ul{
+	width: 95%;
+	padding: 5%;
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+}
+
+@media (max-width:1024px){
+	
+}/*1024*/
+
+@media (max-width:767px){
+	
+}/*767*/
+
+
+
+
+
+
+
+

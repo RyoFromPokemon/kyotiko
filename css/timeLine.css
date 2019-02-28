@@ -1,0 +1,165 @@
+@charset "utf-8";
+
+#header{
+	width: 100%;
+	height: 77px;
+	border-bottom: solid 1px lightgray;
+	z-index: 1000;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+#header, #headerIn, #logo, #navi{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#headerIn{
+	width: 960px;
+	margin: 0 auto;
+}
+#logo a{
+	color: #000;
+}
+#logo p{
+	padding-right: 10px;
+}
+#logo img{
+	width: 40px;
+}
+#navi img{
+	width: 30px;
+	margin-left: 20px;
+}
+
+#wrapper{
+	width: 60vw;
+	margin: 0 auto;
+  	overflow:hidden;
+  	margin-top: 100px;
+  	/*background-color:#000;*/
+  	z-index: 1;
+}
+#wrapperIn{
+	width: 100%;
+	/*display: flex;*/
+	position: relative;
+}
+#contLeft{
+	width: 60%;
+}
+
+.cont{
+	width: 100%;
+	margin-bottom: 50px;
+	border: solid 1px lightgray;
+}
+.cont li,
+.postPhoto img{
+	width: 100%;
+}
+.userInfo{
+	width: 100%;
+	padding: 10px;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+.userInfo li{
+	margin-left: 10px;
+}
+.userInfo li:first-child,
+.userInfo img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+}
+.userInfo a{
+	text-decoration: none;
+	color: #000;
+}
+.contInfo{
+	padding: 10px;
+}
+
+
+#contRight{
+	width: 20%;
+	height: 50vh;
+	top: 125px;
+	right: 20vw;
+	position: fixed;
+	z-index: 100;
+}
+#contRightIn{
+	width: 100%;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	/*background-color: #fafafa;*/
+}
+#contRightIn li,
+#contRightIn img{
+	width: 70px;
+	height: 70px;
+	border-radius: 70px;
+	border: solid 2px red;
+}
+#contRight p{
+	margin-left: 20px;
+}
+
+#contFollow{
+	height: 100%;
+	border: solid 1px lightgray;
+	overflow: scroll;	
+	box-sizing: border-box;
+}
+#contFollow p{
+	color: gray;
+	height: 50px;
+	padding: 10px;
+	box-sizing: border-box;
+	position: fixed;
+	background-color: #fafafa;
+}
+.followInfo{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.followInfo dt,
+.followInfo dd{
+	margin-left: 20px;
+}
+.followInfo img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+}
+#followList{
+	margin-top: 50px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

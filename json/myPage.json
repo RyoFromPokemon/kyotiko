@@ -1,0 +1,39 @@
+{
+    "myPageItems" : [
+        {
+            "myImg" : "../images/gold.jpg",
+            "placeName" : "金閣寺",
+            "recomendMes" : "〜〜〜〜〜〜が良い！"
+        },
+        {
+            "myImg" : "../images/silver.jpg",
+            "placeName" : "金閣寺",
+            "recomendMes" : "〜〜〜〜〜〜が良い！"
+        },
+        {
+            "myImg" : "../images/kiyo.jpg",
+            "placeName" : "金閣寺",
+            "recomendMes" : "〜〜〜〜〜〜が良い！"
+        },
+        {
+            "myImg" : "../images/azuki.jpg",
+            "placeName" : "金閣寺",
+            "recomendMes" : "〜〜〜〜〜〜が良い！"
+        },
+        {
+            "myImg" : "../images/dango.jpg",
+            "placeName" : "金閣寺",
+            "recomendMes" : "〜〜〜〜〜〜が良い！"
+        },
+        {
+            "myImg" : "../images/soba.jpg",
+            "placeName" : "金閣寺",
+            "recomendMes" : "〜〜〜〜〜〜が良い！"
+        },
+        {
+            "myImg" : "../images/lunch.jpg",
+            "placeName" : "金閣寺",
+            "recomendMes" : "〜〜〜〜〜〜が良い！"
+        }   
+    ]
+}
