@@ -85,16 +85,13 @@ else{
 <meta charset="utf-8">
 <title>kyotiko:マイページ</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../css/all.css">
 <link rel="stylesheet" type="text/css" href="../css/mainPage.css">
 <link rel="stylesheet" type="text/css" href="../css/gmap.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 <script type="text/javascript" src="../js/jquery-2.0.2.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBWL3ftdFyjayPW47hTxBgan9ONt6gop1Y&callback=initMap' async defer></script>
-
 <script src="../js/gmap.js"></script>
 
 </head>
@@ -127,10 +124,22 @@ else{
 </div><!--header-->
 
 <div id="wrapper">
-<h1 id="shopClick">ハリル</h1>
-  <div id="gmap" style="width: 500px;height: 500px;"></div>
+    <div id="contLeft">
+        <p>コチラから入力</p>
+        <input type="text" id="mapInfo" name="mapInfo" placeholder="観光地やお店を追加" size="20">
+        <input type="button" id="button" value="追加">
+        <input type="button" id="button1" value="履歴削除">
+        <div id="output">
+            <p>追加履歴</p>
+            <ol>
 
-
+            </ol>
+        </div>
+    </div>
+    
+    <div id="gmap" style="width:75%; height:87vh; position:absolute; top:0; right:0; margin-right:10px; background-color: olive;"></div>
 </div>
+
+</script>
 </body>
 </html>

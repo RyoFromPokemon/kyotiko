@@ -74,8 +74,8 @@ $(function(){
               $("#gmap").css({
                   "display":"block",
                   "position":"absolute",
-                  "top":"360px",
-                  "right":"260px",
+                  "top":"390px",
+                  "right":"180px",
                   "z-index":"2000"}
               );
             $("#contItem")

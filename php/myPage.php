@@ -202,7 +202,7 @@ foreach($photoList as $photo){
     <div class="photoIn">
 	 		<li><img src="../images/<?= $photo->getPhoto() ?>" ></li>
       <div class="mask">
-        <div class="caption">It's fresh !</div>
+        <div class="caption"> click ! <br>more info</div>
       </div>
     </div>
 <?php
@@ -241,7 +241,7 @@ $(document).ready(function() {
 
   <div id="cont_detail">
   </div>
-  <div id="gmap" style="width:450px;height:250px;display:none;" ></div>
+  <div id="gmap" style="width:35%;height:31%;display:none;" ></div>
 
 
 

@@ -4,8 +4,11 @@ function initMap() {
   Lat = "34.699875";
   Lng = "135.493032";
   LatLng = new google.maps.LatLng(Lat,Lng);
+  Lat2 = "34.702485";
+  Lng2 = "135.495951";
+  LatLng2 = new google.maps.LatLng(Lat,Lng);
   opts = {
-    zoom: 17,
+    zoom: 13,
     center: LatLng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
@@ -13,6 +16,7 @@ function initMap() {
   mapObj = new google.maps.Map(document.getElementById("gmap"), opts);
   //マーカー生成をオブジェクト化
   gMarkerCenter = drawMarkerCenterInit(LatLng);
+  gMarkerCenter2 = drawMarkerCenterInit2(LatLng2);
 }     
 //マーカー生成関数
 function drawMarkerCenterInit() {
@@ -20,6 +24,12 @@ function drawMarkerCenterInit() {
     map: mapObj,
   });
   return markerCenter;
+}
+function drawMarkerCenterInit2() {
+  var markerCenter2 = new google.maps.Marker({
+    map: mapObj,
+  });
+  return markerCenter2;
 }
 
 $(function(){
@@ -52,20 +62,39 @@ $(function(){
       dataType:'text',
       success:function(dataIn){
         jsonObj = JSON.parse(dataIn);
-        console.log(jsonObj)
+        // console.log(jsonObj)
         json = jsonObj.photoDetail[testEq];
         checkPlace = json.tourist;
-        console.log(checkPlace)
+         console.log(checkPlace)
+        
         geocoder = new google.maps.Geocoder();
         geocoder.geocode({'address':checkPlace,'region':'jp'},
         function(result,status){
             if(status == google.maps.GeocoderStatus.OK){
-              mapObj.setCenter(result[0].geometry.location);
+              mapObj.setCenter(result[0].geometry.location);/*中心を決める*/
               gMarkerCenter.setPosition(result[0].geometry.location);
-          };//if
+            };//if
         });//geocode
+        
+        checkShop = json.shop_name;
+        console.log(checkShop)
+
+        geocoder1 = new google.maps.Geocoder();
+        geocoder1.geocode({'address':checkShop,'region':'jp'},
+        function(result,status){
+            if(status == google.maps.GeocoderStatus.OK){
+              //mapObj.setCenter(result[0].geometry.location);
+              gMarkerCenter2.setPosition(result[0].geometry.location);
+            };//if
+        });//geocode
+
+        localStorage.setItem("testEq",checkPlace);
+        console.log(testEq);
+        sessionStorage.setItem("testEq",checkShop);
+
         $("#cont_detail").append("<div id=\"contItem\"></div>") ;
-          $("#contItem").append("<p><img src='../images/"+ json.photo + "'></p>") ;
+          $("#contItem").append("<div id=\"itemImg\"></div>") ;
+          $("#contItem #itemImg").append("<p><img src='../images/"+ json.photo + "'></p>") ;
           $("#contItem").append("<div id=\"itemInfo\"></div>") ;
             $("#itemInfo").append("<div id=\"userInfo\"></div>") ;
               $("#contItem #itemInfo #userInfo").append("<p><img src='../images/" + json.picture + "'</p>") ;
@@ -73,20 +102,20 @@ $(function(){
             $("#itemInfo").append("<div id=\"infoDetail\"></div>") ;
               $("#contItem #itemInfo #infoDetail")
                 .append(
-                  "<p id='shopName'>お店の名前：" + json.shop_name + "</p>") ;
+                  "<p id='shopName'>#" + json.shop_name + " #" + json.tourist + "</p>") ;
               $("#contItem #itemInfo #infoDetail")
                 .append("<p id='shopUrl'>お店のURL：<a href='json.shop_url'>" + json.shop_url + "</a></p>") ;
-              $("#contItem #itemInfo #infoDetail").append("<p>近くの観光地：" + json.tourist + "</p>") ;
-              $("#contItem #itemInfo #infoDetail").append("<p>近くの観光地：" + json.tourist + "</p>") ;
-              $("#contItem #itemInfo #infoDetail").append("<p>近くの観光地：" + json.tourist + "</p>") ;
-              $("#contItem #itemInfo #infoDetail").append("<p>近くの観光地：" + json.tourist + "</p>") ;
-              $("#contItem #itemInfo #infoDetail").append("<p>近くの観光地：" + json.tourist + "</p>") ;
+                $("#contItem #itemInfo #infoDetail").append("<p>コメント：" + json.tourist + "</p>") ;
+                $("#contItem #itemInfo #infoDetail").append("<p>コメント：" + json.tourist + "</p>") ;
+                $("#contItem #itemInfo #infoDetail").append("<p>コメント：" + json.tourist + "</p>") ;
+                $("#contItem #itemInfo #infoDetail").append("<p>コメント：" + json.tourist + "</p>") ;
+            $("#itemInfo").append("<p id='gmapJump'><a href='gmap.php'>地図上に観光地やお店を追加</a></p>") ;
             $("#gmap")
               .css({
                 "display":"block",
                 "position":"fixed",
-                "top":"460px",
-                "right":"210px",
+                "top":"58%",
+                "left":"51%",
                 "z-index":"2000"}
               );
             //$("#contItem #itemInfo").append("<div id='gmap'></div>");
@@ -94,27 +123,32 @@ $(function(){
               //.append("<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBWL3ftdFyjayPW47hTxBgan9ONt6gop1Y&callback=initMap' async defer></script>");
           $("#contItem")
           .css({
-            "width":"1050px",
-            "height":"550px",
-            "background-color":"white",
+            "width":"73%",
+            "height":"64%",
+            "background-color":"#fafafa",
             "position":"fixed",
             "top":"50%",
             "left":"50%",
             "display":"flex",
-            "margin":"-250px 0px 0px -520px",
+            "margin":"-17% 0px 0px -36%",
+            "padding":"5px",
             "z-index":"1000"
           });
-          $("#contItem img:first-child")
+          $("#contItem #itemImg")
           .css({
-            "width":"550px",
-            "height":"550px"
+            "width":"100%",
+            "height":"100%"
+          })
+          $("#contItem #itemImg img")
+          .css({
+            "width":"100%",
+            "height":"90%"
           });
           $("#itemInfo")
           .css({
             "width":"100%",
             "height":"54%",
-            "padding":"10px",
-            "backgroundColor":"red"
+            "padding":"15px"
           })
           $("#userInfo")
           .css({
@@ -133,6 +167,11 @@ $(function(){
             "font-size":"1.2em",
             "margin-left":"10px"
           })
+          $("#contItem #userInfo p:first-child")
+          .css({
+            "width":"10%",
+            "height":"10%"
+          })
           $("#contItem #itemInfo img")
           .css({
             "width":"50px",
@@ -143,12 +182,29 @@ $(function(){
           .css({
             "margin-top":"5px"
           })
+          $("#itemInfo #gmapJump")
+          .css({
+            "padding-top":"10px"
+          })
+          $("#itemInfo #gmapJump a")
+          .css({
+            "color":"black"
+          })
           $("#infoDetail")
           .css({
             "width":"100%",
             "height":"54%",
-            "backgroundColor":"blue",
+            "background-color":"#F4F3F3",
+            "padding":"0 5px",
             "overflow":"scroll"
+          })
+          $("#infoDetail p")
+          .css({
+            "margin-bottom":"10px"
+          })
+          $("#infoDetail a")
+          .css({
+            "color":"black"
           })
           //css
         },//success

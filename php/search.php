@@ -1,7 +1,6 @@
 <?php
 
 $tourist = $_POST["tourist"];
-var_dump($_POST);
 
 $touList = ["清水寺","金閣寺","銀閣寺","平安神宮","蹴上インクライン","南禅寺","龍安寺","哲学の道","嵐山","鞍馬寺"];
 $picList = ["kiyo.jpg","gold.jpg","silver.jpg","heian.jpg","keage.jpg","nanzenji.jpg","ryouan.jpg","tetsugaku.jpg","arashiyama.jpg","kurama.jpg"];
@@ -171,9 +170,12 @@ foreach($validationMsgs as $msg){
 <?php
 foreach($photoList as $photo){
 ?>
-    <div class="photoIn">
-			<li><img src="../images/<?= $photo->getPhoto() ?>" width="300px"></li>
-    </div>
+        <div class="photoIn">
+			<li><img src="../images/<?= $photo->getPhoto() ?>" ></li>
+            <div class="mask">
+                <div class="caption"> click ! <br>more info</div>
+            </div>
+        </div>
 <?php
 }
 ?>

@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+
+body{
+	background-color: #fafafa;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+li{
+	/*list-style-position:outside;*/
+}
+a{
+	text-decoration: none;
+}
+img{
+	vertical-align: bottom;
+}
+div{
+	box-sizing:border-box;
+}
+.kyotiko{
+	font-family: "Indie Flower", cursive;
+}
+#wrapper{
+	height: 100vh;
+	background-image: url(../images/error.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+}
+#wrapperIn{
+	position: absolute;
+	position: fixed;
+	top: 40%;
+	left: 30%;
+	width: 60%;
+	/*background-color: red;*/
+	margin: 0 auto;
+}
+
+#logo{
+	display: flex;
+}
+#logo h1{
+}
+#logo p{
+	padding-right: 10px;
+}
+#logo img{
+	width: 40px;
+}
+#navi img{
+	width: 30px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
